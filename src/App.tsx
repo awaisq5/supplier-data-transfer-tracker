@@ -95,7 +95,7 @@ export function App() {
       </main>
 
       <footer className="foot">
-        Not legal advice. The rules are simplified to what supplier onboarding needs; derogations (Art. 49 GDPR), binding corporate rules and importers already subject to the GDPR are not modelled.{' '}
+        Independent personal project with synthetic data; it contains no information from any former employer. Not legal advice. The rules are simplified to what supplier onboarding needs; derogations (Art. 49 GDPR), binding corporate rules and importers already subject to the GDPR are not modelled.{' '}
         <a href="https://github.com/awaisq5/supplier-data-transfer-tracker">Source on GitHub</a>
       </footer>
 

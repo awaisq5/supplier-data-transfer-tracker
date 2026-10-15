@@ -14,6 +14,8 @@ In a global commodity rotation in procurement, part of my work was data protecti
 
 That work ran on spreadsheets and email. This project is the tool I would have wanted for it: rules that decide what each supplier needs, so every follow-up asks for the right documents, and a register that shows at a glance where personal data flows without safeguards. **All data here is synthetic**: the company, its entities and every supplier are invented, and contact addresses use the reserved `.example` domain.
 
+> **Independent personal project.** I built this on my own time, after my employment ended, to show the kind of work I did professionally. It contains no code, data, documents, screenshots or other information belonging to any former employer, its customers or its suppliers. The method is rebuilt from general professional knowledge, all data in the repository is synthetic, and the only figures quoted from my career are the ones published on my CV.
+
 ## What it does
 
 **1. Works out the transfer tool for every flow.** A flow is one exporting regime (from the countries of our entities that send data) to one place where the supplier or a sub-processor handles it. Each flow is one of:
