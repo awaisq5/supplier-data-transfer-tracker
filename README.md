@@ -79,7 +79,7 @@ src/pages/                overview, register, follow-ups, transfer check, what i
 - **Not legal advice.** The rules cover what supplier onboarding needs. Derogations (Art. 49 GDPR), binding corporate rules, and importers already subject to the GDPR under Art. 3(2), for which the SCCs are not designed, are out of scope.
 - The tool tracks that an assessment exists and covers the right countries. It does not assess the destination's laws itself.
 - UK transfers follow the Data (Use and Access) Act test since 5 February 2026; the tool keeps the IDTA and the UK Addendum as the UK tools.
-- Adequacy lists change. They were checked against the Commission, ICO and Swiss Federal Office of Justice pages on the date in `adequacy.ts`, and need re-checking before relying on them.
+- Adequacy lists change. They were checked against the Commission, ICO and Swiss Federal Office of Justice pages on the date in `adequacy.ts`, and need re-checking before relying on them. The app shows a notice once a list has not been re-checked for six months.
 - One user per browser. A team version would need a backend with users and an audit trail.
 
 ## License

@@ -159,3 +159,23 @@ export const TIMELINE: { date: string; regime: Regime | 'all'; text: string }[] 
   { date: '2026-01-26', regime: 'EU', text: 'Adequacy decision for Brazil adopted, alongside Brazil recognising the EU.' },
   { date: '2026-02-05', regime: 'UK', text: 'Data (Use and Access) Act transfer provisions in force: safeguards must give protection “not materially lower” than in the UK.' },
 ]
+
+/** Re-check the lists against their sources at least this often. */
+export const RECHECK_AFTER_DAYS = 182
+
+export interface ListAge {
+  list: AdequacyList
+  days: number
+  overdue: boolean
+}
+
+/** Age of each regime's list on `today` (YYYY-MM-DD), oldest first. */
+export function listAges(today: string, lists: AdequacyList[] = Object.values(ADEQUACY)): ListAge[] {
+  const day = (iso: string) => Date.parse(`${iso}T00:00:00Z`) / 86_400_000
+  return lists
+    .map((list) => {
+      const days = Math.max(0, Math.round(day(today) - day(list.checkedOn)))
+      return { list, days, overdue: days > RECHECK_AFTER_DAYS }
+    })
+    .sort((a, b) => b.days - a.days)
+}

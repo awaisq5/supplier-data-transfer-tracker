@@ -3,10 +3,11 @@ import { BasisChip, BucketChip, fmt, plural, RegimeTags, Stat } from '../compone
 import { WorldMap } from '../components/WorldMap'
 import { comparePriority } from '../domain/documents'
 import type { Basis } from '../domain/types'
-import { ADEQUACY, CURRENT_LISTS } from '../law/adequacy'
+import { RecheckNotice } from '../components/RecheckNotice'
+import { ADEQUACY, CURRENT_LISTS, listAges } from '../law/adequacy'
 import { countryName } from '../law/countries'
 import { type Regime, REGIMES } from '../law/regimes'
-import type { Register } from '../state/store'
+import { type Register, TODAY } from '../state/store'
 
 interface Props {
   reg: Register
@@ -72,8 +73,9 @@ export function Overview({ reg, onOpen, onTab }: Props) {
           <a href={ADEQUACY.CH.source} target="_blank" rel="noreferrer">
             Swiss
           </a>{' '}
-          lists on {ADEQUACY.EU.checkedOn}.
+          lists, the oldest on {listAges(TODAY)[0].list.checkedOn}.
         </p>
+        <RecheckNotice />
       </section>
 
       <section className="stats">

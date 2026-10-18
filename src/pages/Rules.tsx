@@ -1,4 +1,5 @@
 import { useMemo, useState } from 'react'
+import { RecheckNotice } from '../components/RecheckNotice'
 import { BasisChip, RegimeTags } from '../components/ui'
 import { assessFlows, MODULE_NAMES, requirementsFor } from '../domain/rules'
 import type { Agreement, Role } from '../domain/types'
@@ -145,16 +146,18 @@ export function Rules() {
       <section className="panel">
         <h2>The three lists side by side</h2>
         <p className="muted">
-          Each regime keeps its own list, and they differ. EEA states are adequate for UK and Swiss exporters and are not repeated here. Checked on {ADEQUACY.EU.checkedOn} against the{' '}
+          Each regime keeps its own list, and they differ. EEA states are adequate for UK and Swiss exporters and are not repeated here. Checked against the{' '}
           {REGIMES.map((r, i) => (
             <span key={r}>
               <a href={ADEQUACY[r].source} target="_blank" rel="noreferrer">
                 {ADEQUACY[r].authority}
-              </a>
+              </a>{' '}
+              ({ADEQUACY[r].checkedOn})
               {i < 2 ? (i === 1 ? ' and ' : ', ') : '.'}
             </span>
           ))}
         </p>
+        <RecheckNotice />
         <ListsTable />
       </section>
 
