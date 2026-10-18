@@ -1,7 +1,8 @@
 import { useMemo, useState } from 'react'
-import { copyText, plural, ProgressChip, RegimeTags } from '../components/ui'
+import { copyText, download, plural, ProgressChip, RegimeTags } from '../components/ui'
 import { logEmailSent } from '../domain/actions'
 import { type AgreementView, BUCKET_LABEL, type Bucket, comparePriority, draftEmail, mailtoLink } from '../domain/documents'
+import { queueCsv } from '../domain/queue'
 import { TODAY, type Register } from '../state/store'
 
 interface Props {
@@ -36,6 +37,13 @@ export function FollowUps({ reg, onOpen }: Props) {
             <option key={a}>{a}</option>
           ))}
         </select>
+        <button
+          className="btn"
+          disabled={!queue.length}
+          onClick={() => download(`follow-ups${analyst ? `-${analyst.toLowerCase().replace(/\W+/g, '-')}` : ''}-${TODAY}.csv`, queueCsv(queue), 'text/csv;charset=utf-8')}
+        >
+          Export CSV
+        </button>
       </div>
 
       {SECTIONS.map(({ bucket, intro }) => {
