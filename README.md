@@ -39,7 +39,7 @@ The Transfer check tab gives the same answer for a single supplier before it is 
 
 ![One agreement: flows by regime, documents with their status, the drafted email and the fine ceiling for the open gap](docs/agreement.png)
 
-**5. Puts the most important follow-ups first, for reasons you can say in one sentence.** Live agreements with gaps come before onboarding, which comes before housekeeping. Within a group: missing transfer safeguards before other paperwork, then special-category data, then the number of people, then how long the supplier has been waiting. No weighted score to argue about.
+**5. Puts the most important follow-ups first, for reasons you can say in one sentence.** Live agreements with gaps come before onboarding, which comes before housekeeping. Within a group: missing transfer safeguards before other paperwork, then special-category data, then the number of people, then how long the supplier has been waiting. No weighted score to argue about. The queue exports as CSV for a weekly meeting or an analyst who works in Excel.
 
 **6. Drafts the email.** The request or reminder lists exactly what this supplier still owes, with the countries each assessment must cover, and numbers the reminders. After three reminders without an answer the agreement is flagged for escalation.
 
@@ -54,7 +54,7 @@ The Transfer check tab gives the same answer for a single supplier before it is 
 ```bash
 npm ci
 npm run dev        # http://localhost:5173
-npm test           # 46 tests on the rules, follow-up logic, CSV import and what-if
+npm test           # tests on the rules, follow-up logic, CSV import and export, and what-if
 npm run build
 ```
 
